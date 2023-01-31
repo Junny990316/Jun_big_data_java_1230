@@ -12,7 +12,6 @@ public class LessThanEx {
     public static void main(String[] args) {
         List<Integer> list = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
-        int[] A = new int[20]; // 배열의 길이
         int N = sc.nextInt(); // 배열의 갯수
         int X = sc.nextInt(); // 비교 값
         for (int i = 0; i < N; i++) {
