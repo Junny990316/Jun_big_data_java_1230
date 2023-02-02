@@ -24,17 +24,21 @@ public class ClassSortEx1 {
     public static void main(String[] args) {
         TreeSet<StudentInfo> ts = new TreeSet<>((Comparator) new ClassSort());
         Scanner sc = new Scanner(System.in);
-        System.out.println("학생 수 입력 : ");
+        System.out.print("학생 수 입력 : ");
         int n = sc.nextInt();
         int cnt = 0;
+        int preScore = 0;
         for (int i = 0; i < n; i++) {
             ts.add(new StudentInfo(sc.next(), sc.nextInt(), sc.nextLine()));
         }
         System.out.println("==== 학생 성적 출력 ====");
         System.out.println("----------------------");
         System.out.println("석차   성적   이름   학번");
+        System.out.println("----------------------");
         for (StudentInfo e : ts) {
-            System.out.printf("%d%5d%5s%5s\n", ++cnt, e.score, e.name, e.studentNum);
+            if (preScore != e.score) cnt++;
+            System.out.printf("%2d%6d%5s%5s\n", cnt, e.score, e.name, e.studentNum);
+            preScore = e.score; // 현재 점수를 변수에 저장
         }
         System.out.println("----------------------");
     }
