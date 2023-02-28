@@ -1,5 +1,4 @@
 package miniProject.vo;
-
 import java.sql.Date;
 
 public class CustomerVo {

@@ -1,8 +1,6 @@
 package miniProject;
-
 import miniProject.dao.CustomerDAO;
 import miniProject.vo.CustomerVo;
-
 import java.util.List;
 import java.util.Scanner;
 
@@ -27,7 +25,11 @@ public class MiniMain {
                     dao.CustomerInsert();
                     break;
                 case 3 :
+                    dao.customerUpdate();
+                    break;
                 case 4 :
+                    dao.customerDelete();
+                    break;
                 case 5 :
                     System.out.println("메뉴를 종료 합니다");
                     return;
