@@ -97,7 +97,7 @@ public class CustomerDAO {
         Common.close(conn);
         Common.close(stmt);
     }
-    public void customerUpdate() {
+    public void CustomerUpdate() {
         System.out.print("변경할 회원의 아이디를 입력하세요 : ");
         String customer_id = sc.next();
         System.out.print("이름 : ");
@@ -131,7 +131,7 @@ public class CustomerDAO {
         Common.close(pStmt);
         Common.close(conn);
     }
-    public void customerDelete() {
+    public void CustomerDelete() {
         System.out.print("삭제할 아이디를 입력 하세요 : ");
         String customer_id = sc.next();
         String sql = "DELETE FROM EMP WHERE CUSTOMERS = ?";
