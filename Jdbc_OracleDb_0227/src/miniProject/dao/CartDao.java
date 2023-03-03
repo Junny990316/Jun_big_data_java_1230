@@ -90,13 +90,12 @@ public class CartDao {
     }
 
     public void cartUpdateTTL(String customer_id){
-        String sql2 = "UPDATE CART SET TOTAL = (SELECT SUM(C.QUANTITY * P.PRICE) FROM CART C JOIN PRODUCTS P ON C.PRODUCT_ID = P.PRODUCT_ID GROUP BY CUSTOMER_ID"
-        + "HAVING CUSTOMER_ID ="  + customer_id + "WHERE CUSTOMER_ID = " + customer_id;
+        String sql2 = "UPDATE CART SET TOTAL_COST = QUANTITY * PRICE WHERE CUSTOMER_ID = ?";
+
         try {
             conn = Common.getConnection();
             pStmt = conn.prepareStatement(sql2);
-            pStmt.setString(1, customer_id);
-            pStmt.setString(2, customer_id);
+            pStmt.setString(1,customer_id);
             pStmt.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
